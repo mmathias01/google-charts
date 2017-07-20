@@ -1,0 +1,28 @@
+{
+  "name": "google-charts",
+  "version": "0.5.0",
+  "description": "ES6 Google Charts Module that allows asynchronous loading",
+  "main": "googleCharts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmathias01/google-charts.git"
+  },
+  "keywords": [
+    "ES6",
+    "google",
+    "charts",
+    "react",
+    "vuejs",
+    "vue",
+    "preact"
+  ],
+  "author": "Matthew Mathias <mmathias01@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmathias01/google-charts/issues"
+  },
+  "homepage": "https://github.com/mmathias01/google-charts#readme"
+}
