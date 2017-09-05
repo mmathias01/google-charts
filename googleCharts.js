@@ -24,7 +24,7 @@ class googleCharts {
     load(callback, type) {
         return this[loadScript]().then(() => {
             if (type) {
-                if(!type.length) {
+                if(!Array.isArray(type)) {
                     type=[type]
                 }
                 this.api.charts.load('current', {'packages': type})
