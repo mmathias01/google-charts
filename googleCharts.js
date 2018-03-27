@@ -7,16 +7,16 @@ class googleCharts {
                 const body = document.getElementsByTagName('body')[0]
                 const script = document.createElement('script')
                 script.type = 'text/javascript'
-            script.onload = function () {
-                GoogleCharts.api = window.google
-                GoogleCharts.api.charts.load('current', {'packages': ['corechart']});
-                GoogleCharts.api.charts.setOnLoadCallback(() => {
-                    resolve()
-                })
-            }
-            script.src = 'https://www.gstatic.com/charts/loader.js'
-            body.appendChild(script)
-        })
+                script.onload = function () {
+                    GoogleCharts.api = window.google
+                    GoogleCharts.api.charts.load('current', {'packages': ['corechart']});
+                    GoogleCharts.api.charts.setOnLoadCallback(() => {
+                        resolve()
+                    })
+                }
+                script.src = 'https://www.gstatic.com/charts/loader.js'
+                body.appendChild(script)
+            })
         }
         return this.scriptPromise
     }
