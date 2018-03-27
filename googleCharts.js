@@ -4,7 +4,7 @@ class googleCharts {
     [loadScript]() {
         if (!this.scriptPromise) {
             this.scriptPromise = new Promise((resolve) => {
-                const head = document.getElementsByTagName('head')[0]
+                const body = document.getElementsByTagName('body')[0]
                 const script = document.createElement('script')
                 script.type = 'text/javascript'
             script.onload = function () {
@@ -15,7 +15,7 @@ class googleCharts {
                 })
             }
             script.src = 'https://www.gstatic.com/charts/loader.js'
-            head.appendChild(script)
+            body.appendChild(script)
         })
         }
         return this.scriptPromise
