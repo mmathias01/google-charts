@@ -4,19 +4,19 @@ class googleCharts {
     [loadScript]() {
         if (!this.scriptPromise) {
             this.scriptPromise = new Promise((resolve) => {
-                const head = document.getElementsByTagName('head')[0]
+                const body = document.getElementsByTagName('body')[0]
                 const script = document.createElement('script')
                 script.type = 'text/javascript'
-            script.onload = function () {
-                GoogleCharts.api = window.google
-                GoogleCharts.api.charts.load('current', {'packages': ['corechart']});
-                GoogleCharts.api.charts.setOnLoadCallback(() => {
-                    resolve()
-                })
-            }
-            script.src = 'https://www.gstatic.com/charts/loader.js'
-            head.appendChild(script)
-        })
+                script.onload = function () {
+                    GoogleCharts.api = window.google
+                    GoogleCharts.api.charts.load('current', {'packages': ['corechart', 'table']});
+                    GoogleCharts.api.charts.setOnLoadCallback(() => {
+                        resolve()
+                    })
+                }
+                script.src = 'https://www.gstatic.com/charts/loader.js'
+                body.appendChild(script)
+            })
         }
         return this.scriptPromise
     }
