@@ -9,7 +9,7 @@ class googleCharts {
                 script.type = 'text/javascript'
                 script.onload = function () {
                     GoogleCharts.api = window.google
-                    GoogleCharts.api.charts.load('current', {'packages': ['corechart']});
+                    GoogleCharts.api.charts.load('current', {'packages': ['corechart', 'table']});
                     GoogleCharts.api.charts.setOnLoadCallback(() => {
                         resolve()
                     })
