@@ -38,6 +38,6 @@ class googleCharts {
 
 export let GoogleCharts = new googleCharts();
 
-if (module.hot) {
+if ((typeof module !== 'undefined') && module.hot) {
     module.hot.accept();
 }
