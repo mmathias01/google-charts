@@ -48,8 +48,12 @@ GoogleCharts.load(drawCharts);
 /* 
 * Load a specific type(s) of chart(s). You can call this as many times as you need from anywhere in your app
 * GoogleCharts is a singleton and will not allow the script to be loaded more than once
+* The mapsApiKey is only required for certain GeoCharts
 */
-GoogleCharts.load(drawGeoChart, 'geochart');
+GoogleCharts.load(drawGeoChart, {
+    'packages': ['geochart'],
+    'mapsApiKey': 'YOUR_API_KEY'
+});
 
 function drawCharts() {
 
