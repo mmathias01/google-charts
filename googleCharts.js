@@ -24,10 +24,15 @@ class googleCharts {
     load(callback, type) {
         return this[loadScript]().then(() => {
             if (type) {
-                if(!Array.isArray(type)) {
-                    type=[type]
+                let config = {};
+                if(type instanceof Object) {
+                    config = type;
+                } else if(Array.isArray(type)) {
+                    config = {'packages': type}
+                } else {
+                    config = {'packages': [type]}
                 }
-                this.api.charts.load('current', {'packages': type})
+                this.api.charts.load('current', config)
                 this.api.charts.setOnLoadCallback(callback)
             } else {
                 callback()
