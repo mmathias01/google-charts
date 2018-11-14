@@ -41,7 +41,7 @@ class googleCharts {
     }
 }
 
-export let GoogleCharts = new googleCharts();
+module.exports = googleCharts
 
 if ((typeof module !== 'undefined') && module.hot) {
     module.hot.accept();
