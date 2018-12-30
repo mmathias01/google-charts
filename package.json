@@ -1,6 +1,6 @@
 {
   "name": "google-charts",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "ES6 Google Charts Module that allows asynchronous loading",
   "main": "dist/googleCharts.js",
   "module": "dist/googleCharts.esm.js",
