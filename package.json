@@ -2,17 +2,29 @@
   "name": "google-charts",
   "version": "1.5.0",
   "description": "ES6 Google Charts Module that allows asynchronous loading",
-  "main": "googleCharts.js",
+  "main": "dist/googleCharts.js",
+  "module": "dist/googleCharts.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "test": "mocha --require lib/compile-tests.js",
+    "bump:patch": "npm run build && npm version patch -m \"v%s\"",
+    "bump:minor": "npm run build && npm version minor -m \"v%s\"",
+    "bump:major": "npm run build && npm version major -m \"v%s\"",
+    "bump": "npm run bump:patch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mmathias01/google-charts.git"
   },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [
     "ES6",
     "google",
+    "google-charts",
     "charts",
     "react",
     "vuejs",
@@ -21,8 +33,38 @@
   ],
   "author": "Matthew Mathias <mmathias01@gmail.com>",
   "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mmathias01/google-charts/blob/master/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.11.1",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "rollup": "^1.0.0",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-conditional": "^2.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "sinon": "^7.2.2",
+    "terser": "^3.14.0-beta"
+  },
   "bugs": {
     "url": "https://github.com/mmathias01/google-charts/issues"
   },
-  "homepage": "https://github.com/mmathias01/google-charts#readme"
+  "homepage": "https://github.com/mmathias01/google-charts#readme",
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not dead",
+    "not ie <= 10"
+  ]
 }
