@@ -33,7 +33,7 @@ class GoogleChartsManager {
                 script.onload = function() {
                     GoogleCharts.api = window.google;
                     GoogleCharts.api.charts.load('current', {
-                        packages: ['corechart', 'table'],
+                        packages: ['corechart', 'table','timeline'],
                     });
                     GoogleCharts.api.charts.setOnLoadCallback(() => {
                         resolve();
