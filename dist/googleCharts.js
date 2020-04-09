@@ -1491,7 +1491,7 @@
 
               GoogleCharts.api = window.google;
               GoogleCharts.api.charts.load('current', {
-                packages: ['corechart', 'table']
+                packages: ['corechart', 'table','timeline']
               });
               GoogleCharts.api.charts.setOnLoadCallback(function () {
                 _newArrowCheck(this, _this2);
