@@ -1,4 +1,4 @@
-/* googleCharts.js Version: 1.5.0 Built On: 2018-12-30 */
+/* googleCharts.js Version: 2.0.0 Built On: 2020-07-08 */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -1478,6 +1478,8 @@
       value: function value() {
         var _this = this;
 
+        var version = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'current';
+
         if (!this.scriptPromise) {
           this.scriptPromise = new Promise(function (resolve) {
             _newArrowCheck(this, _this);
@@ -1490,7 +1492,7 @@
               var _this2 = this;
 
               GoogleCharts.api = window.google;
-              GoogleCharts.api.charts.load('current', {
+              GoogleCharts.api.charts.load(version, {
                 packages: ['corechart', 'table']
               });
               GoogleCharts.api.charts.setOnLoadCallback(function () {
@@ -1512,7 +1514,8 @@
       value: function load(callback, type) {
         var _this3 = this;
 
-        return this[loadScript]().then(function () {
+        var version = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'current';
+        return this[loadScript](version).then(function () {
           _newArrowCheck(this, _this3);
 
           if (type) {
@@ -1530,7 +1533,7 @@
               };
             }
 
-            this.api.charts.load('current', config);
+            this.api.charts.load(version, config);
             this.api.charts.setOnLoadCallback(callback);
           } else {
             if (typeof callback != 'function') {
